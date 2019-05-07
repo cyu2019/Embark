@@ -1,0 +1,32 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/Layer 3.png-14296acbd85708d60eff7b43c7c827c7.stex"
+
+[deps]
+
+source_file="res://Sprites/dog/sleeping/Layer 3.png"
+source_md5="4b841700f257f50cc4421f9d22e2b1ce"
+
+dest_files=[ "res://.import/Layer 3.png-14296acbd85708d60eff7b43c7c827c7.stex" ]
+dest_md5="331f317ab4be276bc1914735b9686544"
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

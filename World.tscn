@@ -1,17 +1,25 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/dog/run/7.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/dog/run/1.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/dog/run/2.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/dog/run/3.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/dog/run/4.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/dog/run/5.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/dog/run/6.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/dog/run/8.png" type="Texture" id=9]
-[ext_resource path="res://Sprites/dog/jump/4.png" type="Texture" id=10]
-[ext_resource path="res://Sprites/dog/jump/2.png" type="Texture" id=11]
-[ext_resource path="res://PlaceHolderTileSet.tres" type="TileSet" id=12]
+[ext_resource path="res://Sprites/dog/idle/1.5.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/dog/idle/2.5.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/dog/idle/3.5.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/dog/idle/4.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/dog/running/1.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/dog/running/2.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/dog/running/3.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/dog/running/4.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/dog/running/5.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/dog/running/6.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/dog/running/7.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/dog/running/8.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/dog/jumping/1.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/dog/jumping/2.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/dog/jumping/3.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/dog/jumping/4.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/cat/Idle/0.png" type="Texture" id=18]
+[ext_resource path="res://PlaceHolderTileSet.tres" type="TileSet" id=19]
+[ext_resource path="res://icon.png" type="Texture" id=20]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -21,26 +29,41 @@ extents = Vector2( 32, 32 )
 [sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "Idle",
-"speed": 5.0
+"speed": 8.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 2 ), ExtResource( 9 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
 "loop": true,
 "name": "Run",
-"speed": 13.0
+"speed": 20.0
 }, {
-"frames": [ ExtResource( 10 ) ],
-"loop": true,
-"name": "Falling",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 11 ) ],
+"frames": [ ExtResource( 14 ), ExtResource( 15 ) ],
 "loop": false,
 "name": "Jumping",
-"speed": 5.0
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 17 ) ],
+"loop": false,
+"name": "Falling",
+"speed": 15.0
 } ]
+
+[sub_resource type="Gradient" id=5]
+
+offsets = PoolRealArray( 0, 0.994083, 1 )
+colors = PoolColorArray( 0, 0, 0, 1, 0.550296, 0.550296, 0.550296, 1, 1, 1, 1, 1 )
+
+[sub_resource type="CircleShape2D" id=3]
+
+custom_solver_bias = 0.0
+radius = 96.0
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32, 32 )
 
 [node name="World" type="Node" index="0"]
 
@@ -52,24 +75,39 @@ collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Collision", "Material", "Visibility", "Z Index" ]
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player" index="0"]
 
+modulate = Color( 1, 0, 0, 1 )
 shape = SubResource( 1 )
+_sections_unfolded = [ "Visibility" ]
 
 [node name="Sprite" type="AnimatedSprite" parent="player" index="1"]
 
-scale = Vector2( 0.2, 0.2 )
+scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 2 )
 animation = "Idle"
-offset = Vector2( 0, 40 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="FloorCast" type="RayCast2D" parent="player" index="2"]
+[node name="LeftWallCast" type="RayCast2D" parent="player" index="2"]
+
+enabled = true
+exclude_parent = true
+cast_to = Vector2( -33, 0 )
+collision_mask = 1
+
+[node name="RightWallCast" type="RayCast2D" parent="player" index="3"]
+
+enabled = true
+exclude_parent = true
+cast_to = Vector2( 33, 0 )
+collision_mask = 1
+
+[node name="FloorCast" type="RayCast2D" parent="player" index="4"]
 
 enabled = true
 exclude_parent = true
@@ -77,21 +115,85 @@ cast_to = Vector2( 0, 33 )
 collision_mask = 1
 _sections_unfolded = [ "Transform" ]
 
-[node name="Line2D" type="Line2D" parent="player" index="3"]
+[node name="WhipLine" type="Line2D" parent="player" index="5"]
 
 visible = false
 z_index = -2
 points = PoolVector2Array( 0, 0, 0, 0 )
 width = 10.0
 default_color = Color( 0.4, 0.5, 1, 1 )
+texture_mode = -1277339952
 sharp_limit = 2.0
 round_precision = 8
 _sections_unfolded = [ "Visibility", "Z Index" ]
 
+[node name="Camera2D" type="Camera2D" parent="player" index="6"]
+
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.1
+drag_margin_right = 0.1
+drag_margin_bottom = 0.1
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+_sections_unfolded = [ "Drag Margin", "Offset", "Smoothing" ]
+
+[node name="CatSprite" type="Sprite" parent="player" index="7"]
+
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 18 )
+offset = Vector2( 30, -180 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="BashLine" type="Line2D" parent="player" index="8"]
+
+visible = false
+z_index = 2
+points = PoolVector2Array( 0, 0, 0, 0 )
+width = 10.0
+default_color = Color( 0.4, 0.5, 1, 1 )
+gradient = SubResource( 5 )
+texture_mode = -1277339952
+sharp_limit = 2.0
+round_precision = 8
+_sections_unfolded = [ "Fill", "Z Index" ]
+
+[node name="BashArea" type="Area2D" parent="player" index="9"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 2
+collision_mask = 2
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/BashArea" index="0"]
+
+shape = SubResource( 3 )
+
 [node name="TileMap" type="TileMap" parent="." index="1"]
 
 mode = 0
-tile_set = ExtResource( 12 )
+tile_set = ExtResource( 19 )
 cell_size = Vector2( 32, 32 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -106,10 +208,34 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 65552, 0, 0, 65553, 2, 0, 131088, 6, 0, 131089, 8, 0, 196627, 0, 0, 196628, 2, 0, 262163, 6, 0, 262164, 8, 0, 589833, 0, 0, 589834, 1, 0, 589835, 1, 0, 589836, 1, 0, 589837, 1, 0, 589838, 1, 0, 589839, 1, 0, 589840, 1, 0, 589841, 1, 0, 589842, 1, 0, 589843, 2, 0, 655369, 3, 0, 655370, 4, 0, 655371, 4, 0, 655372, 4, 0, 655373, 4, 0, 655374, 4, 0, 655375, 4, 0, 655376, 4, 0, 655377, 4, 0, 655378, 4, 0, 655379, 5, 0, 720905, 6, 0, 720906, 7, 0, 720907, 7, 0, 720908, 7, 0, 720909, 7, 0, 720910, 7, 0, 720911, 7, 0, 720912, 7, 0, 720913, 7, 0, 720914, 7, 0, 720915, 8, 0 )
+tile_data = PoolIntArray( 22, 3, 0, 65543, 4, 0, 65553, 4, 0, 65558, 3, 0, 131094, 3, 0, 196630, 3, 0, 262166, 3, 0, 327702, 3, 0, 393219, 4, 0, 393238, 3, 0, 458774, 3, 0, 589833, 0, 0, 589834, 1, 0, 589835, 1, 0, 589836, 1, 0, 589837, 1, 0, 589838, 1, 0, 589839, 1, 0, 589840, 1, 0, 589841, 1, 0, 589842, 1, 0, 589843, 2, 0, 655369, 3, 0, 655370, 4, 0, 655371, 4, 0, 655372, 4, 0, 655373, 4, 0, 655374, 4, 0, 655375, 4, 0, 655376, 4, 0, 655377, 4, 0, 655378, 4, 0, 655379, 5, 0, 720905, 6, 0, 720906, 7, 0, 720907, 7, 0, 720908, 7, 0, 720909, 7, 0, 720910, 7, 0, 720911, 7, 0, 720912, 7, 0, 720913, 7, 0, 720914, 7, 0, 720915, 8, 0 )
 _sections_unfolded = [ "Cell" ]
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Enemy" type="StaticBody2D" parent="." index="2"]
+
+position = Vector2( 352, 64 )
+input_pickable = false
+collision_layer = 2
+collision_mask = 2
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Enemy" index="0"]
+
+texture = ExtResource( 20 )
+_sections_unfolded = [ "Animation", "Offset", "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy" index="1"]
+
+shape = SubResource( 4 )
 
 
