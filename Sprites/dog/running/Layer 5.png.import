@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/7.png-ef0a6af38411fcf6be2453007f5cf355.stex"
+path="res://.import/Layer 5.png-008e941711f5b6103d5351825096b67d.stex"
 
 [deps]
 
-source_file="res://Sprites/dog/running/7.png"
-source_md5="a43a05ad20a6bc6586d00c87174dd6f6"
+source_file="res://Sprites/dog/running/Layer 5.png"
+source_md5="c8a05b14835cce77c9d405bf3a90dbfb"
 
-dest_files=[ "res://.import/7.png-ef0a6af38411fcf6be2453007f5cf355.stex" ]
-dest_md5="de872d419d572293d19cf519f13da487"
+dest_files=[ "res://.import/Layer 5.png-008e941711f5b6103d5351825096b67d.stex" ]
+dest_md5="b373b0cd8a89c0e96a995decf291ca4c"
 
 [params]
 
