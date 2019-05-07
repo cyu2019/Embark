@@ -77,15 +77,7 @@ cast_to = Vector2( 0, 33 )
 collision_mask = 1
 _sections_unfolded = [ "Transform" ]
 
-[node name="WhipCast" type="RayCast2D" parent="player" index="3"]
-
-enabled = true
-exclude_parent = true
-cast_to = Vector2( 0, 0 )
-collision_mask = 1
-_sections_unfolded = [ "Transform", "Z Index" ]
-
-[node name="Line2D" type="Line2D" parent="player" index="4"]
+[node name="Line2D" type="Line2D" parent="player" index="3"]
 
 visible = false
 z_index = -2
