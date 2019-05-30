@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/Run4.png-d85e7eb3186664e77faa416be8dced3a.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://Sprites/Player/Run4.png"
-source_md5="5a7654b04ab5983c5d2d177a7d419e15"
-
 dest_files=[ "res://.import/Run4.png-d85e7eb3186664e77faa416be8dced3a.stex" ]
-dest_md5="30c2e0179a3cacf8600d0bccee19dfb8"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

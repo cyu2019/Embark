@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/4.png-5285e797a697dba936a5eaa57249ed70.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://Sprites/dog/jumping/4.png"
-source_md5="f37b78938f38638303b87db2fe2ba1bc"
-
 dest_files=[ "res://.import/4.png-5285e797a697dba936a5eaa57249ed70.stex" ]
-dest_md5="bcfbb0b88aca91837faa1d5a6f12dab0"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

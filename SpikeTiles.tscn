@@ -1,0 +1,155 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Sprites/spikes 2.png" type="Texture" id=1]
+
+[node name="RockAndDirtTiles" type="Node2D"]
+
+[node name="s1" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 832, -416 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 256, 256 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="s1"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="s1/StaticBody2D"]
+polygon = PoolVector2Array( -128, -128, -128, 128, 0, 128, 0, 0, 128, 0, 128, -128, -128, -128 )
+
+[node name="s2" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 896, -416 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 256, 0, 256, 256 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="s2"]
+position = Vector2( -256, 0 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="s2/StaticBody2D2"]
+polygon = PoolVector2Array( 128, -128, 128, 0, 384, 0, 384, -128, 128, -128, 128, -128 )
+
+[node name="s3" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 960, -416 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 512, 0, 256, 256 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="s3"]
+position = Vector2( -512, 0 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="s3/StaticBody2D3"]
+polygon = PoolVector2Array( 512, 0, 512, 128, 640, 128, 640, -128, 384, -128, 384, 0, 512, 0 )
+
+[node name="s4" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 832, -352 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 256, 256, 256 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="s4"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="s4/StaticBody2D4"]
+polygon = PoolVector2Array( -128, -128, -128, 128, 0, 128, 0, -128 )
+
+[node name="s6" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 960, -352 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 512, 256, 256, 256 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="s6"]
+position = Vector2( -512, -256 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="s6/StaticBody2D5"]
+polygon = PoolVector2Array( 512, 128, 512, 384, 640, 384, 640, 128, 512, 128, 512, 128, 512, 128 )
+
+[node name="s7" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 832, -288 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 512, 256, 256 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="s7"]
+position = Vector2( 0, -512 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="s7/StaticBody2D6"]
+polygon = PoolVector2Array( -128, 384, -128, 640, 128, 640, 128, 512, 0, 512, 0, 384, -128, 384 )
+
+[node name="s8" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 896, -288 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 256, 512, 256, 256 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="s8"]
+position = Vector2( -256, -512 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="s8/StaticBody2D7"]
+polygon = PoolVector2Array( 128, 512, 128, 640, 384, 640, 384, 512, 128, 512 )
+
+[node name="s9" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 960, -288 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 512, 512, 256, 256 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="s9"]
+position = Vector2( -512, -512 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="s9/StaticBody2D8"]
+polygon = PoolVector2Array( 384, 512, 384, 640, 640, 640, 640, 384, 512, 384, 512, 512, 384, 512 )

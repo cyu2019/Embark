@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/Layer 4.png-44fa6b6b78f65bc81121fb1f0e701f5c.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://Sprites/dog/sleeping/Layer 4.png"
-source_md5="931f8916dae9c77c4719c260af43693c"
-
 dest_files=[ "res://.import/Layer 4.png-44fa6b6b78f65bc81121fb1f0e701f5c.stex" ]
-dest_md5="63e0abd623d29f6d6d013e0182432fb3"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

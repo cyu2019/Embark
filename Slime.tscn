@@ -1,0 +1,41 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Slime.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/slime final/1.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/slime final/2.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/slime final/3.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/slime final/4.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/slime final/5.png" type="Texture" id=6]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": false,
+"name": "Jump",
+"speed": 10.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 32, 32 )
+
+[node name="Enemy" type="KinematicBody2D"]
+collision_layer = 26
+collision_mask = 26
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 1 )
+animation = "Jump"
+frame = 4
+playing = true
+offset = Vector2( 0, 32 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+physics_process_parent = true

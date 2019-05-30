@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/Layer 12.png-35f26ca76f3736337bd6854f3d97a4d6.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://Sprites/dog/idle/Layer 12.png"
-source_md5="b52893cc510af2e2443d93ac39039f6b"
-
 dest_files=[ "res://.import/Layer 12.png-35f26ca76f3736337bd6854f3d97a4d6.stex" ]
-dest_md5="9ab3b56b22098c83cfd96f5bdf669c31"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

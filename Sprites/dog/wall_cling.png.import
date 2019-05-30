@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/wall_cling.png-2a3287acb7c0f04e963d3e72bd91e1ad.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://Sprites/dog/wall_cling.png"
-source_md5="535d13311ed5b04e76449c8964e941cb"
-
 dest_files=[ "res://.import/wall_cling.png-2a3287acb7c0f04e963d3e72bd91e1ad.stex" ]
-dest_md5="f5390afb0ad9ef77d5255a6208637a4d"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

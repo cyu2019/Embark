@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/Layer 8.png-2d325be027728e73a5c7a1210c8aa775.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://Sprites/dog/running/Layer 8.png"
-source_md5="2eb4fff73a58c5c9c5e2ec2b6839648f"
-
 dest_files=[ "res://.import/Layer 8.png-2d325be027728e73a5c7a1210c8aa775.stex" ]
-dest_md5="7959cf4c53ee70c26a5ac252f6e3e2be"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

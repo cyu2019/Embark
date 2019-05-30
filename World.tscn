@@ -1,244 +1,198 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=18 format=2]
 
-[ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/dog/idle/Layer 8.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/dog/idle/Layer 9.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/dog/idle/Layer 10.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/dog/idle/Layer 11.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/dog/idle/Layer 12.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/dog/idle/Layer 13.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/dog/idle/Layer 14.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/dog/running/Layer 1.png" type="Texture" id=9]
-[ext_resource path="res://Sprites/dog/running/Layer 2.png" type="Texture" id=10]
-[ext_resource path="res://Sprites/dog/running/Layer 3.png" type="Texture" id=11]
-[ext_resource path="res://Sprites/dog/running/Layer 4.png" type="Texture" id=12]
-[ext_resource path="res://Sprites/dog/running/Layer 5.png" type="Texture" id=13]
-[ext_resource path="res://Sprites/dog/running/Layer 6.png" type="Texture" id=14]
-[ext_resource path="res://Sprites/dog/running/Layer 7.png" type="Texture" id=15]
-[ext_resource path="res://Sprites/dog/running/Layer 8.png" type="Texture" id=16]
-[ext_resource path="res://Sprites/dog/jumping/3.png" type="Texture" id=17]
-[ext_resource path="res://Sprites/dog/jumping/4.png" type="Texture" id=18]
-[ext_resource path="res://Sprites/dog/jumping/1.png" type="Texture" id=19]
-[ext_resource path="res://Sprites/dog/jumping/2.png" type="Texture" id=20]
-[ext_resource path="res://Sprites/cat/Idle/0.png" type="Texture" id=21]
-[ext_resource path="res://PlaceHolderTileSet.tres" type="TileSet" id=22]
-[ext_resource path="res://icon.png" type="Texture" id=23]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Sprites/BIG_rock.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/rock1.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/wall_cling_but_old.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/pink_tree.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/background placeholder.png" type="Texture" id=6]
+[ext_resource path="res://RockAndDirtTiles.tres" type="TileSet" id=7]
+[ext_resource path="res://Slime.gd" type="Script" id=8]
+[ext_resource path="res://Sprites/slime final/1.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/slime final/2.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/slime final/3.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/slime final/4.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/slime final/5.png" type="Texture" id=13]
+
 
 [sub_resource type="RectangleShape2D" id=1]
-
-custom_solver_bias = 0.0
-extents = Vector2( 32, 32 )
+extents = Vector2( 64, 288 )
 
 [sub_resource type="SpriteFrames" id=2]
-
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
-"loop": true,
-"name": "Idle",
-"speed": 8.0
-}, {
-"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
-"loop": true,
-"name": "Run",
-"speed": 20.0
-}, {
-"frames": [ ExtResource( 17 ), ExtResource( 18 ) ],
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
 "loop": false,
-"name": "Falling",
-"speed": 15.0
-}, {
-"frames": [ ExtResource( 19 ), ExtResource( 20 ) ],
-"loop": false,
-"name": "Jumping",
-"speed": 15.0
+"name": "Jump",
+"speed": 10.0
 } ]
 
-[sub_resource type="Gradient" id=3]
-
-offsets = PoolRealArray( 0, 0.994083, 1 )
-colors = PoolColorArray( 0, 0, 0, 1, 0.550296, 0.550296, 0.550296, 1, 1, 1, 1, 1 )
-
-[sub_resource type="CircleShape2D" id=4]
-
-custom_solver_bias = 0.0
-radius = 96.0
-
-[sub_resource type="RectangleShape2D" id=5]
-
-custom_solver_bias = 0.0
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 32, 32 )
 
-[node name="World" type="Node" index="0"]
+[sub_resource type="Environment" id=4]
+background_mode = 4
+ambient_light_color = Color( 1, 1, 1, 1 )
+auto_exposure_scale = 0.12
+glow_enabled = true
+glow_blend_mode = 0
 
-[node name="player" type="KinematicBody2D" parent="." index="0"]
+[node name="World" type="Node"]
 
-position = Vector2( 448, 192 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-collision/safe_margin = 0.08
-script = ExtResource( 1 )
-_sections_unfolded = [ "Collision", "Material", "Visibility", "Z Index" ]
+[node name="player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 512, 192 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+bbcode_text = "poopy"
+text = "poopy"
+
+[node name="big_rock" type="StaticBody2D" parent="."]
+position = Vector2( 1024, 85.75 )
+collision_layer = 9
+collision_mask = 9
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player" index="0"]
+[node name="Sprite" type="Sprite" parent="big_rock"]
+texture = ExtResource( 2 )
 
-modulate = Color( 1, 0, 0, 1 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="big_rock"]
+polygon = PoolVector2Array( -114.605, 196.526, -107.746, 135.652, -76.8807, 55.9162, -59.7332, 51.6293, -47.7299, -78.6919, -38.2988, -136.993, 44.0093, -194.438, 179.475, -209.87, 318.37, -30.6788, 356.952, 36.1965, 356.094, 83.3522, 374.099, 120.219, 394.676, 148.513, 388.675, 196.526 )
+
+[node name="rock" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 704, 187 )
+scale = Vector2( 0.5, 0.5 )
+collision_layer = 13
+collision_mask = 13
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="rock"]
+texture = ExtResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="rock"]
+polygon = PoolVector2Array( -96, 192, -128, 128, -128, 128, -128, 0, -96, -192, -64, -224, 32, -192, 128, 96, 64, 192 )
+
+[node name="wall_climb" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 224, -320 )
+scale = Vector2( 0.4, 0.4 )
+collision_layer = 13
+collision_mask = 13
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="wall_climb"]
+texture = ExtResource( 4 )
+offset = Vector2( 260, 32 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall_climb"]
 shape = SubResource( 1 )
-_sections_unfolded = [ "Visibility" ]
 
-[node name="Sprite" type="AnimatedSprite" parent="player" index="1"]
+[node name="wall_climb2" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( -67.4, -416 )
+scale = Vector2( 0.4, 0.4 )
+collision_layer = 13
+collision_mask = 13
+__meta__ = {
+"_edit_group_": true
+}
 
-scale = Vector2( 0.25, 0.25 )
-frames = SubResource( 2 )
-animation = "Idle"
-_sections_unfolded = [ "Transform" ]
+[node name="Sprite" type="Sprite" parent="wall_climb2"]
+texture = ExtResource( 4 )
+offset = Vector2( 260, 32 )
 
-[node name="LeftWallCast" type="RayCast2D" parent="player" index="2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall_climb2"]
+shape = SubResource( 1 )
 
-enabled = true
-exclude_parent = true
-cast_to = Vector2( -33, 0 )
-collision_mask = 1
+[node name="wall_climb3" type="StaticBody2D" parent="."]
+position = Vector2( 491.5, -96 )
+scale = Vector2( 0.4, 0.4 )
+collision_layer = 13
+collision_mask = 13
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="RightWallCast" type="RayCast2D" parent="player" index="3"]
+[node name="Sprite" type="Sprite" parent="wall_climb3"]
+texture = ExtResource( 4 )
+offset = Vector2( 260, 32 )
 
-enabled = true
-exclude_parent = true
-cast_to = Vector2( 33, 0 )
-collision_mask = 1
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall_climb3"]
+shape = SubResource( 1 )
 
-[node name="FloorCast" type="RayCast2D" parent="player" index="4"]
+[node name="pink_tree" type="StaticBody2D" parent="."]
+position = Vector2( -608, -160 )
+scale = Vector2( 0.5, 0.5 )
+collision_layer = 13
+collision_mask = 13
+__meta__ = {
+"_edit_group_": true
+}
 
-enabled = true
-exclude_parent = true
-cast_to = Vector2( 0, 33 )
-collision_mask = 1
-_sections_unfolded = [ "Transform" ]
+[node name="Sprite" type="Sprite" parent="pink_tree"]
+texture = ExtResource( 5 )
 
-[node name="WhipLine" type="Line2D" parent="player" index="5"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pink_tree"]
+polygon = PoolVector2Array( -672, 832, -448, 832, -128, 704, -32, 608, -64, 480, -544, 480, -544, 352, -416, 192, -416, 64, -512, 0, -512, -160, -800, -256, -896, -384, -640, -288, -384, -288, -224, -288, 64, -448, 160, -480, 512, -416, 768, -352, 768, -320, 480, -352, 224, -416, 32, -320, -96, -128, -128, -64, -128, 160, -64, 224, 96, 288, 288, 288, 448, 256, 608, 320, 672, 480, 736, 576, 800, 640, 864, 704, 928, 768, 1056, 832, 1376, 928, 1056, 928, 704, 896, 224, 896, -576, 928, -768, 896 )
 
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+editor/display_folded = true
+
+[node name="Background" type="Sprite" parent="ParallaxBackground2"]
 visible = false
-z_index = -2
-points = PoolVector2Array( 0, 0, 0, 0 )
-width = 10.0
-default_color = Color( 0.4, 0.5, 1, 1 )
-texture_mode = -1277339952
-sharp_limit = 2.0
-round_precision = 8
-_sections_unfolded = [ "Visibility", "Z Index" ]
+scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 6 )
+centered = false
 
-[node name="Camera2D" type="Camera2D" parent="player" index="6"]
-
-anchor_mode = 1
-rotating = false
-current = true
-zoom = Vector2( 1, 1 )
-limit_left = -10000000
-limit_top = -10000000
-limit_right = 10000000
-limit_bottom = 10000000
-limit_smoothed = false
-drag_margin_h_enabled = true
-drag_margin_v_enabled = true
-smoothing_enabled = true
-smoothing_speed = 5.0
-offset_v = 0.0
-offset_h = 0.0
-drag_margin_left = 0.2
-drag_margin_top = 0.1
-drag_margin_right = 0.1
-drag_margin_bottom = 0.1
-editor_draw_screen = true
-editor_draw_limits = false
-editor_draw_drag_margin = false
-_sections_unfolded = [ "Drag Margin", "Offset", "Smoothing" ]
-
-[node name="CatSprite" type="Sprite" parent="player" index="7"]
-
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 21 )
-offset = Vector2( 30, -180 )
-_sections_unfolded = [ "Offset", "Region", "Transform" ]
-
-[node name="BashLine" type="Line2D" parent="player" index="8"]
-
-visible = false
-z_index = 2
-points = PoolVector2Array( 0, 0, 0, 0 )
-width = 10.0
-default_color = Color( 0.4, 0.5, 1, 1 )
-gradient = SubResource( 3 )
-texture_mode = -1277339952
-sharp_limit = 2.0
-round_precision = 8
-_sections_unfolded = [ "Fill", "Z Index" ]
-
-[node name="BashArea" type="Area2D" parent="player" index="9"]
-
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-collision_layer = 2
-collision_mask = 2
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Collision", "Transform" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player/BashArea" index="0"]
-
-shape = SubResource( 4 )
-
-[node name="TileMap" type="TileMap" parent="." index="1"]
-
-mode = 0
-tile_set = ExtResource( 22 )
-cell_size = Vector2( 32, 32 )
-cell_quadrant_size = 16
-cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-cell_half_offset = 2
-cell_tile_origin = 0
-cell_y_sort = false
-cell_clip_uv = false
-collision_use_kinematic = false
-collision_friction = 1.0
-collision_bounce = 0.0
-collision_layer = 1
-collision_mask = 1
-occluder_light_mask = 1
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 7 )
+cell_size = Vector2( 256, 256 )
+collision_layer = 13
+collision_mask = 13
 format = 1
-tile_data = PoolIntArray( 22, 3, 0, 65543, 4, 0, 65553, 4, 0, 65558, 3, 0, 131094, 3, 0, 196630, 3, 0, 262166, 3, 0, 327702, 3, 0, 393219, 4, 0, 393238, 3, 0, 458774, 3, 0, 589833, 0, 0, 589834, 1, 0, 589835, 1, 0, 589836, 1, 0, 589837, 1, 0, 589838, 1, 0, 589839, 1, 0, 589840, 1, 0, 589841, 1, 0, 589842, 1, 0, 589843, 2, 0, 655369, 3, 0, 655370, 4, 0, 655371, 4, 0, 655372, 4, 0, 655373, 4, 0, 655374, 4, 0, 655375, 4, 0, 655376, 4, 0, 655377, 4, 0, 655378, 4, 0, 655379, 5, 0, 720905, 6, 0, 720906, 7, 0, 720907, 7, 0, 720908, 7, 0, 720909, 7, 0, 720910, 7, 0, 720911, 7, 0, 720912, 7, 0, 720913, 7, 0, 720914, 7, 0, 720915, 8, 0 )
-_sections_unfolded = [ "Cell" ]
+tile_data = PoolIntArray( 7, 9, 0, 8, 10, 0, 9, 10, 0, 10, 10, 0, 11, 10, 0, 12, 11, 0, 65536, 0, 0, 65537, 1, 0, 65538, 1, 0, 65539, 1, 0, 65540, 1, 0, 65541, 2, 0, 65543, 15, 0, 65544, 16, 0, 65545, 16, 0, 65546, 16, 0, 65547, 16, 0, 65548, 17, 0, 131072, 6, 0, 131073, 7, 0, 131074, 7, 0, 131075, 7, 0, 131076, 7, 0, 131077, 8, 0 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Enemy" type="StaticBody2D" parent="." index="2"]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-position = Vector2( 352, 64 )
-input_pickable = false
-collision_layer = 2
-collision_mask = 2
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-_sections_unfolded = [ "Collision" ]
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.1, 0.1 )
+motion_mirroring = Vector2( 1008, 526 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+visible = false
+texture = ExtResource( 6 )
+centered = false
+offset = Vector2( 0, 100 )
+
+[node name="Enemy" type="KinematicBody2D" parent="."]
+position = Vector2( 192, 192 )
+collision_layer = 10
+collision_mask = 10
+script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="Enemy" index="0"]
+[node name="Sprite" type="AnimatedSprite" parent="Enemy"]
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 2 )
+animation = "Jump"
+frame = 4
+playing = true
+offset = Vector2( 0, 32 )
 
-texture = ExtResource( 23 )
-_sections_unfolded = [ "Animation", "Offset", "Transform" ]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
+shape = SubResource( 3 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy" index="1"]
-
-shape = SubResource( 5 )
-
-
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 4 )

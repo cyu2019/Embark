@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/1.png-c334a1e28a2cdf8d6fc425ffc29bbad2.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://Sprites/dog/bark/1.png"
-source_md5="f1c745f7733b718b1a1482dbe8fd0548"
-
 dest_files=[ "res://.import/1.png-c334a1e28a2cdf8d6fc425ffc29bbad2.stex" ]
-dest_md5="1c4c1990289908df2a4fa8cac65ecd7b"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/breathe.png-5b6df0c303f718a16356b28f0042f744.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://Sprites/dog/sleeping/breathe.png"
-source_md5="f2618d047c52f86849dafc19fda4e241"
-
 dest_files=[ "res://.import/breathe.png-5b6df0c303f718a16356b28f0042f744.stex" ]
-dest_md5="29c6651854571f85d7c861932636912f"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true
